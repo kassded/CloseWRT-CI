@@ -34,6 +34,10 @@ UPDATE_PACKAGE "luci-app-gecoosac" "lwb1978/openwrt-gecoosac" "main"
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 UPDATE_PACKAGE "luci-app-wolplus" "VIKINGYFY/luci-app-wolplus" "main"
 
+UPDATE_PACKAGE "luci-app-alist" "sbwml/luci-app-alist" "main"
+UPDATE_PACKAGE "luci-app-adguardhome" "chenmozhijin/luci-app-adguardhome" "master"
+UPDATE_PACKAGE "luci-app-lucky" "gdy666/luci-app-lucky" "main"
+
 if [[ $WRT_BRANCH == *"23.05"* ]]; then
 	UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
 fi
