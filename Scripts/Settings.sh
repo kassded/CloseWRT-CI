@@ -10,7 +10,7 @@ sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $WRT_CI-$WRT_DATE')/g" $(find ./f
 #修改默认WIFI名
 WIFI_FILE="./package/mtk/applications/mtwifi-cfg/files/mtwifi.sh"
 sed -i "/htbsscoex=\"1\"/{n; s/ssid=\".*\"/ssid=\"$WRT_WIFI\"/}" $WIFI_FILE
-sed -i "/htbsscoex=\"0\"/{n; s/ssid=\".*\"/ssid=\"$WRT_WIFI-5G\"/}" $WIFI_FILE
+sed -i "/htbsscoex=\"0\"/{n; s/ssid=\".*\"/ssid=\"$WRT_WIFI\_5G\"/}" $WIFI_FILE
 
 CFG_FILE="./package/base-files/files/bin/config_generate"
 #修改默认IP地址
