@@ -20,6 +20,7 @@ on:
         default: 'openwrt-21.02'
         required: true
         type: string
+        options: [openwrt-21.02, openwrt-23.05]
       ADJUST:
         description: '内存低占用模式，默认关闭。'
         default: 'false'
@@ -30,7 +31,7 @@ on:
         type: string
       TEST:
         description: '仅输出配置文件，不编译固件。'
-        default: 'true'
+        default: 'false'
         required: true
         type: boolean
 
@@ -51,9 +52,9 @@ jobs:
       #默认主机名
       WRT_NAME: CWRT
       #默认WIFI名
-      WRT_WIFI: CWRT
+      WRT_WIFI: com
       #默认地址
-      WRT_IP: 192.168.10.1
+      WRT_IP: 192.168.2.1
       #默认密码，仅作提示，修改无用
       WRT_PW: 无
       #源码链接
