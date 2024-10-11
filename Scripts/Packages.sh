@@ -24,6 +24,8 @@ UPDATE_PACKAGE() {
 UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "master"
 UPDATE_PACKAGE "kucat" "sirpdboy/luci-theme-kucat" "js"
 
+UPDATE_PACKAGE "golang" "sbwml/packages_lang_golang" "23.x"	
+
 #UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
