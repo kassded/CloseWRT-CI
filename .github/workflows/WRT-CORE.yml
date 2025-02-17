@@ -54,7 +54,7 @@ env:
   WRT_BRANCH: ${{inputs.WRT_BRANCH}}
   WRT_PACKAGE: ${{inputs.WRT_PACKAGE}}
   WRT_TEST: ${{inputs.WRT_TEST}}
-
+  WRT_Repositories: 798xWRT_data
 jobs:
   core:
     name: ${{inputs.WRT_SOURCE}}
@@ -92,7 +92,14 @@ jobs:
           echo "WRT_VER=$WRT_VER" >> $GITHUB_ENV
 
       - name: Clone Code
+        env:
+          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
         run: |
+          git clone --depth=1 --single-branch https://$PRIVATE_REPO_TOKEN@github.com/dsadaskwq/$WRT_Repositories
+          shopt -s dotglob
+          cp -r "$WRT_Repositories"/[!.]* .
+          shopt -u dotglob
+
           git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
           cd ./wrt/ && echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
