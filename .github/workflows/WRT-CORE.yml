@@ -154,7 +154,7 @@ jobs:
         run: |
           cd ./wrt/
           wget -t 10 -qO "h24.10-add-hy3000.diff" "https://github.com/dsadaskwq/wrtmimimi/releases/download/add/h24.10-add-hy3000.diff"
-          git apply h-add-hy3000.diff
+          git apply h24.10-add-hy3000.diff
           echo "hy3000补丁！"
           ./scripts/feeds update -a
           ./scripts/feeds install -a
