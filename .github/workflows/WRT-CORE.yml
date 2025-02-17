@@ -171,6 +171,8 @@ jobs:
           cd ./wrt/
 
           find ./defconfig -type f -iname "*$WRT_CONFIG*" -exec cat {} + | sort | uniq > .config
+          sed -i '/^CONFIG_TARGET_DEVICE_mediatek_mt7981_DEVICE/d' .config
+          sed -i '/^CONFIG_TARGET_DEVICE_PACKAGES_mediatek_mt7981_DEVICE/d' .config
 
           cat $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
 
