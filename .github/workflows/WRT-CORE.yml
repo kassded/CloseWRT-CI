@@ -92,13 +92,7 @@ jobs:
           echo "WRT_VER=$WRT_VER" >> $GITHUB_ENV
 
       - name: Clone Code
-        env:
-          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
         run: |
-          git clone --depth=1 --single-branch https://$PRIVATE_REPO_TOKEN@github.com/dsadaskwq/$WRT_Repositories
-          shopt -s dotglob
-          cp -r "$WRT_Repositories"/[!.]* .
-          shopt -u dotglob
 
           git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
@@ -159,7 +153,9 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./wrt/
-
+          wget -t 10 -qO "h24.10-add-hy3000.diff" "https://github.com/dsadaskwq/wrtmimimi/releases/download/add/h24.10-add-hy3000.diff"
+          git apply h-add-hy3000.diff
+          echo "hy3000补丁！"
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
