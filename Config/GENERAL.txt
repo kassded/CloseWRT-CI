@@ -56,19 +56,6 @@ CONFIG_PACKAGE_luci-app-vlmcsd=y
 CONFIG_PACKAGE_luci-app-zerotier=y
 CONFIG_PACKAGE_luci-app-openvpn-server=y
 CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers=y
-#CONFIG_PACKAGE_tailscale=y
-#CONFIG_PACKAGE_luci-app-tailscale=y
-CONFIG_PACKAGE_luci-app-wireguard=y
-CONFIG_PACKAGE_coremark=y
-#CONFIG_PACKAGE_vim-full=y
-#CONFIG_PACKAGE_luci-app-wrtbwmon=y
-CONFIG_PACKAGE_luci-app-vsftpd=y
-#CONFIG_PACKAGE_luci-app-tinyfilemanager=y
-#CONFIG_PACKAGE_luci-app-accesscontrol=y
-#CONFIG_PACKAGE_luci-app-parentcontrol=y
-CONFIG_PACKAGE_luci-app-alist=y
-CONFIG_PACKAGE_luci-app-wechatpush=y
-CONFIG_PACKAGE_luci-app-adguardhome=y
 
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
