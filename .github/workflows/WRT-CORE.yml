@@ -177,7 +177,7 @@ jobs:
           cat $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
-
+          ls /feeds/luci/applications
           make defconfig -j$(nproc) && make clean
 
       - name: Download Packages
